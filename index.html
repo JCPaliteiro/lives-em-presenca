@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2E2454">
+<title>Live em Presença · O Perdão · 26 de outubro</title>
+<meta name="description" content="Live gratuita sobre o Perdão com João Carlos Paliteiro. Segunda-feira, 26 de outubro · 21h (Portugal) · 18h (Brasil) · Online, pelo Zoom.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://lives.joaopaliteiro.com/"><meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Live em Presença · O Perdão">
+<meta property="og:description" content="Segunda, 26 de outubro · 21h PT · 18h BR · Zoom · Gratuita. Vem como estás.">
+<meta property="og:image" content="https://lives.joaopaliteiro.com/perdao-capa.jpg"><meta property="og:image:width" content="1080"><meta property="og:image:height" content="1080">
+<meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://lives.joaopaliteiro.com/perdao-capa.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@500;600&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Mesmo formato da página da Inteireza Divina (obrigado/): fundo creme, cartão branco, formulário MailerLite. Página reutilizada todos os meses: muda só o bloco do mês. */
+:root{
+  --cream:#FBF6EC;--cream-deep:#F3EAD3;--card:#FFFFFF;--ink:#2A2018;--ink-soft:#5f5446;
+  --indigo:#2E2454;--indigo-soft:#4A3B7A;--gold:#C9A063;--gold-deep:#8a6a2f;--violet:#8f5bd6;--line:#E6D9BE;
+  --shadow:0 16px 40px rgba(120,90,40,.12);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--caps:"Cinzel",Georgia,serif;--sans:"Jost","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.7;
+  background:
+    radial-gradient(ellipse 900px 520px at 12% -8%, rgba(143,91,214,.10), transparent 60%),
+    radial-gradient(ellipse 800px 600px at 100% 12%, rgba(74,59,122,.08), transparent 55%),
+    radial-gradient(ellipse 1000px 700px at 50% 115%, rgba(242,193,78,.12), transparent 60%),
+    linear-gradient(180deg,var(--cream),#FEFCF6 30%,var(--cream) 70%,var(--cream-deep));min-height:100vh}
+.wrap{max-width:640px;margin:0 auto;padding:36px 16px 56px;text-align:center}
+.logo{width:180px;height:auto;display:block;margin:0 auto 30px}
+.eyebrow{font-family:var(--caps);font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);display:flex;align-items:center;justify-content:center;gap:10px}
+.eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
+h1{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.6rem,8vw,3.6rem);line-height:1.08;color:var(--indigo);margin:18px 0 0;text-wrap:balance}
+.lead{font-family:var(--serif);font-size:1.45rem;line-height:1.45;color:var(--indigo);margin:22px auto 0;max-width:32ch}
+.cover{display:block;width:100%;max-width:420px;height:auto;margin:30px auto 0;border-radius:18px;box-shadow:var(--shadow)}
+.text{text-align:left;margin:34px 0 0}
+.text p{margin:0 0 16px}
+.when{margin:30px 0 0;font-size:17px;color:var(--ink-soft)}
+.when b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--indigo);margin-bottom:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:30px 24px;margin:34px 0 0;text-align:left}
+.card h2{font-family:var(--caps);font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo);text-align:center;margin:0 0 20px;font-weight:600}
+label{display:block;font-size:16px;font-weight:500;color:var(--ink-soft);margin:0 0 6px}
+input{width:100%;font:inherit;font-size:18px;padding:13px 16px;border:1px solid #d9cdb3;border-radius:12px;background:#FFFDF8;color:var(--ink);margin:0 0 18px}
+input:focus{outline:2px solid var(--violet);outline-offset:1px;border-color:transparent}
+.btn{display:block;width:100%;border:0;cursor:pointer;margin-top:8px;font-family:var(--sans);font-size:17px;font-weight:600;letter-spacing:.02em;color:#FFFDF7;background:linear-gradient(100deg,var(--indigo-soft),var(--indigo));padding:16px 26px;border-radius:999px;box-shadow:0 8px 22px rgba(46,36,84,.25)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.note{font-size:16px;color:var(--ink-soft);text-align:center;margin:16px 0 0}
+.err{color:#9b2c2c;font-size:16px;text-align:center;margin:12px 0 0;display:none}
+.done{display:none;text-align:center}
+.done p{font-family:var(--serif);font-size:1.4rem;line-height:1.45;color:var(--indigo);margin:0 0 18px}
+.closing{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--indigo);margin:40px auto 0;line-height:1.5;max-width:30ch;text-wrap:balance}
+.sign{margin:22px 0 0;font-size:17px;color:var(--ink-soft)}
+footer{margin-top:44px;font-size:14px;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <img class="logo" src="logo-horizontal.png" alt="BEYOND — Academia de Evolução Divina" width="560" height="145">
+
+  <div class="eyebrow">Lives em Presença</div>
+
+  <!-- BLOCO DO MÊS · outubro 2026 -->
+  <h1>O Perdão 🤍</h1>
+
+  <p class="lead">O que ainda pesa em ti?</p>
+
+  <a class="btn" href="#t-form" style="max-width:360px;margin:24px auto 0;text-decoration:none">Quero estar presente</a>
+
+  <img class="cover" src="perdao-3x4.jpg" alt="Live do Perdão · 26 de outubro · 21h PT · 18h BR · Zoom · Gratuita" width="1080" height="1440">
+
+  <div class="text">
+    <p>Há pesos que carregamos tanto tempo que já nem damos por eles. Uma palavra que ficou por dizer. Uma mágoa antiga. E, muitas vezes, o mais pesado de todos: aquilo que ainda não perdoámos a nós próprios.</p>
+    <p>O perdão não é um favor que fazemos ao outro. Não é esquecer, nem fingir que não doeu. É uma decisão. E é uma decisão que nos devolve a liberdade.</p>
+    <p>Vamos estar juntos em Presença: um tempo para compreender, um tempo de silêncio e uma prática para levares contigo. No fim, tenho um presente para ti.</p>
+  </div>
+
+  <div class="when">
+    <b>Segunda-feira, 26 de outubro</b>
+    21h (Portugal) · 18h (Brasil) · Online, pelo Zoom · Gratuita
+  </div>
+  <!-- FIM DO BLOCO DO MÊS -->
+
+  <section class="card" aria-labelledby="t-form">
+    <div id="formbox">
+      <h2 id="t-form">Quero estar presente</h2>
+
+      <form id="f" action="https://assets.mailerlite.com/jsonp/909226/forms/201897872169371295/subscribe" method="post" target="ml-sink">
+        <label for="nome">O teu nome</label>
+        <input id="nome" name="fields[name]" type="text" autocomplete="given-name" required>
+
+        <label for="email">O teu email</label>
+        <input id="email" name="fields[email]" type="email" autocomplete="email" required>
+
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+
+        <button class="btn" id="b" type="submit">Quero receber o link do Zoom</button>
+      </form>
+
+      <p class="note">É gratuito. Recebes o link por email logo a seguir.</p>
+      <p class="err" id="err">Não consegui enviar. Verifica o email e tenta outra vez, por favor.</p>
+    </div>
+
+    <div class="done" id="done" role="status">
+      <p><b>Já está!</b> ✨</p>
+      <p>Enviei-te agora um email com o link do Zoom.</p>
+      <p style="font-family:var(--sans);font-size:16px;color:var(--ink-soft)">Se não o vires dentro de 5 minutos, procura no Spam ou em Promoções.</p>
+    </div>
+  </section>
+
+  <p class="closing">Não precisas de estar pront@. Basta vires como estás!</p>
+
+  <p class="sign">Com Amor,<br>João Carlos</p>
+
+  <footer>© 2026 João Carlos Paliteiro · BEYOND — Academia de Evolução Divina. Todos os direitos reservados.</footer>
+</main>
+
+<iframe name="ml-sink" title="envio" style="display:none"></iframe>
+<script>
+(function(){
+  var f=document.getElementById('f'),b=document.getElementById('b'),sent=false;
+  f.addEventListener('submit',function(){
+    sent=true;b.disabled=true;b.textContent='A enviar…';document.getElementById('err').style.display='none';
+  });
+  document.querySelector('iframe[name=ml-sink]').addEventListener('load',function(){
+    if(!sent)return;
+    document.getElementById('formbox').style.display='none';
+    document.getElementById('done').style.display='block';
+  });
+})();
+</script>
+<script src="pixel.js" defer></script>
+</body>
+</html>
