@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Joao Carlos Paliteiro//Lives em Presenca//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:live-perdao-20261026@lives.joaopaliteiro.com
+DTSTAMP:20261022T180000Z
+DTSTART:20261026T210000Z
+DTEND:20261026T223000Z
+SUMMARY:Live em Presença — O Perdão
+DESCRIPTION:Live gratuita pelo Zoom com João Carlos Paliteiro. O link do Zoom chega por email depois da inscrição. https://lives.joaopaliteiro.com
+LOCATION:Zoom
+URL:https://lives.joaopaliteiro.com
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Live do Perdão daqui a 30 minutos
+END:VALARM
+END:VEVENT
+END:VCALENDAR
