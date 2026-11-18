@@ -124,14 +124,19 @@ footer{margin-top:44px;font-size:14px;color:var(--ink-soft)}
 <iframe name="ml-sink" title="envio" style="display:none"></iframe>
 <script>
 (function(){
-  var f=document.getElementById('f'),b=document.getElementById('b'),sent=false;
-  f.addEventListener('submit',function(){
-    sent=true;b.disabled=true;b.textContent='A enviar…';document.getElementById('err').style.display='none';
-  });
-  document.querySelector('iframe[name=ml-sink]').addEventListener('load',function(){
-    if(!sent)return;
-    document.getElementById('formbox').style.display='none';
-    document.getElementById('done').style.display='block';
+  var f=document.getElementById('f'),b=document.getElementById('b'),err=document.getElementById('err'),fallback=false,sent=false;
+  function ok(){document.getElementById('formbox').style.display='none';document.getElementById('done').style.display='block';}
+  function fail(){b.disabled=false;b.textContent='Inscrever-me na Live';err.style.display='block';}
+  // Plano B: se o pedido direto falhar por rede, envia pelo iframe como antes
+  document.querySelector('iframe[name=ml-sink]').addEventListener('load',function(){if(fallback&&sent)ok();});
+  f.addEventListener('submit',function(e){
+    if(fallback){sent=true;return;}
+    e.preventDefault();
+    b.disabled=true;b.textContent='A enviar…';err.style.display='none';
+    fetch(f.action,{method:'POST',body:new FormData(f)})
+      .then(function(r){return r.json();})
+      .then(function(j){if(j&&j.success)ok();else fail();})
+      .catch(function(){fallback=true;sent=true;f.submit();});
   });
 })();
 </script>
