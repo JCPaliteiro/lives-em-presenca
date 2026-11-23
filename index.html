@@ -65,7 +65,8 @@ footer{margin-top:44px;font-size:14px;color:var(--ink-soft)}
 <main class="wrap">
   <img class="logo" src="logo-horizontal.png" alt="BEYOND — Academia de Evolução Divina" width="560" height="145">
 
-  <!-- BLOCO DO MÊS · novembro 2026 · modo INSCRIÇÃO (Live a 23 nov) -->
+  <!-- BLOCO DO MÊS · novembro 2026 · modo INSCRIÇÃO (Live a 23 nov) · sai sozinho a 24 nov 00h -->
+  <div data-ate="2026-11-24T00:00:00Z">
   <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Live em Presença · A Entrega · 23 de novembro</h1>
 
   <img class="cover" src="https://media.joaopaliteiro.com/lives/entrega-pagina-v1.jpg" alt="Live em Presença · A Entrega · O que ainda seguras sozinho? · 23 de novembro, 21h (PT) · 18h (BR)" width="1080" height="1350">
@@ -86,7 +87,7 @@ footer{margin-top:44px;font-size:14px;color:var(--ink-soft)}
     <a href="entrega.ics" download>Apple / Outlook</a></p>
   <!-- FIM DO BLOCO DO MÊS -->
 
-  <section class="card" aria-labelledby="t-form">
+  <section class="card" data-ate="2026-11-24T00:00:00Z" aria-labelledby="t-form">
     <div id="formbox">
       <h2 id="t-form">Quero estar presente</h2>
 
@@ -116,6 +117,25 @@ footer{margin-top:44px;font-size:14px;color:var(--ink-soft)}
       <p style="font-family:var(--sans);font-size:16px;color:var(--ink-soft)">Se não o vires dentro de 5 minutos, procura no Spam ou em Promoções.</p>
     </div>
   </section>
+  </div>
+
+  <!-- BLOCO DE ESPERA · Solstício · aparece a 24 nov 00h, sem formulário (inscrições em breve) -->
+  <div data-desde="2026-11-24T00:00:00Z" data-ate="2026-12-22T00:00:00Z" data-titulo="Live em Presença · O Amor de Jesus · 21 dez">
+    <p class="eyebrow">Próxima Live em Presença</p>
+    <h1>O Amor de Jesus</h1>
+    <p class="lead">Live do Solstício</p>
+    <div class="when">
+      <b>Segunda-feira, 21 de dezembro</b>
+      21h (Portugal) · 18h (Brasil) · Online, pelo Zoom · Gratuita
+    </div>
+    <p class="cal">Guarda na tua agenda:
+      <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Live%20em%20Presen%C3%A7a%20%E2%80%94%20O%20Amor%20de%20Jesus&amp;dates=20261221T210000Z/20261221T223000Z&amp;details=Live%20gratuita%20do%20Solst%C3%ADcio%20pelo%20Zoom%20com%20Jo%C3%A3o%20Carlos%20Paliteiro.%20Inscri%C3%A7%C3%B5es%20em%20https%3A%2F%2Flives.joaopaliteiro.com&amp;location=Zoom&amp;ctz=Europe%2FLisbon" target="_blank" rel="noopener">Google Agenda</a></p>
+    <section class="card" style="text-align:center">
+      <h2>Inscrições em breve</h2>
+      <p style="margin:0 0 18px">No Jardim da Cura Divina, os convites chegam primeiro.</p>
+      <a class="btn" style="text-decoration:none" href="https://chat.whatsapp.com/CXucusBZx8b3vEFuD2bA8o">Entrar no Jardim da Cura Divina</a>
+    </section>
+  </div>
 
   <p class="closing">Não precisas de estar pront@. Basta vires como estás!</p>
 
@@ -126,8 +146,12 @@ footer{margin-top:44px;font-size:14px;color:var(--ink-soft)}
 
 <iframe name="ml-sink" title="envio" style="display:none"></iframe>
 <script>
+// Validade automática: data-desde / data-ate (hora UTC = Lisboa no inverno)
+(function(){try{var n=Date.now();document.querySelectorAll('[data-desde],[data-ate]').forEach(function(el){var d=el.getAttribute('data-desde'),a=el.getAttribute('data-ate');if((d&&n<Date.parse(d))||(a&&n>=Date.parse(a))){el.remove();}else if(el.getAttribute('data-titulo')){document.title=el.getAttribute('data-titulo');}});}catch(e){}})();
+</script>
+<script>
 (function(){
-  var f=document.getElementById('f'),b=document.getElementById('b'),err=document.getElementById('err'),fallback=false,sent=false;
+  var f=document.getElementById('f');if(!f)return;var b=document.getElementById('b'),err=document.getElementById('err'),fallback=false,sent=false;
   function ok(){document.getElementById('formbox').style.display='none';document.getElementById('done').style.display='block';}
   function fail(){b.disabled=false;b.textContent='Inscrever-me na Live';err.style.display='block';}
   // Plano B: se o pedido direto falhar por rede, envia pelo iframe como antes
